@@ -7,4 +7,13 @@ sinlimconbackend
 * API 설계 상태 - 예제로 하나정도 완성, 나머지 API 설계 필요
 
 # API 상태
-* /sinlimcon/designs -> 디자인 전체 리스트 불러오기
+* ##  주소 설계
+  * /sinlimcon/designs -> 디자인 전체 리스트 불러오기
+* ## 배포 상태
+    * 미 배포  
+    *  AWS EC2에 젠킨스 사용 하여 배포 예정
+
+# DB 연결
+* End point=designduck.cphno6qganog.ap-northeast-2.rds.amazonaws.com:3306
+* User=designduck
+* Password=designduck
