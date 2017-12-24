@@ -13,8 +13,11 @@ public class DesignService {
 	@Autowired
 	DesignDao designdao;
 
-	public List<DesignVo> getUserList() {
-		return designdao.readAll();
+	public Object getDesignList(String userId) {
+		if (userId==null) {
+			return designdao.readAll();
+		} else {
+			return designdao.read(userId);
+		}
 	}
-
 }

@@ -16,8 +16,16 @@ public class DesignDao {
 
 
 	public List<DesignVo> readAll() {
-		List<DesignVo> userList = session.selectList("selectDesignList");
-		System.out.println(userList);
-		return userList;
+		List<DesignVo> designList = session.selectList("selectDesignList");
+		System.out.println(designList);
+		return designList;
 	}
+
+
+	public DesignVo read(String userId) {
+		DesignVo design=session.selectOne("selectDesignById");
+		return null;
+	}
+
+
 }

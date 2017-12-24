@@ -1,5 +1,5 @@
 package com.ctk.sinlimcon.vo;
 
-public class user {
+public class userVo {
 
 }
