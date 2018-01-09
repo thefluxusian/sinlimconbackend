@@ -6,8 +6,49 @@ sinlimconbackend
 * DB에서 데이터 뽑아 오는것 완료
 * API 설계 상태 - 예제로 하나정도 완성, 나머지 API 설계 필요
 
-# API 상태
+# RESTFUL API 상태
+* ## Resource
+  ~~~
+  USER {
+      userid : VARCHAR
+      profileimageurl : VARCHAR
+      username : VARCHAR
+      email : VARCHAR
+      password : VARCHAR
+      createtime : TIMESTAMP
+      birthdate : DATE
+  }
+  ~~~
+
+  ~~~
+  DESIGN {
+    desigid : VARCHAR
+    userid : VARCHAR
+    firstuploadtime : DATETIME
+    lastuploadtime : DATETIME
+    price : int
+    summary : VARCHAR
+  }
+  ~~~
+
+  ~~~
+  PICTURE {
+    pictureid : int
+    filesrc : VARCHAR
+    design_designid : VARCHAR
+  }
+  ~~~
+
+  ~~~
+  ZZIM {
+    zzimid : VARCHAR
+    user_userid : VARCHAR
+    design_designid : VARCHAR
+  }
+  ~~~
+
 * ##  주소 설계
+
   * /sinlimcon/designs -> 디자인 전체 리스트 불러오기
 * ## 배포 상태
     * 미 배포  
