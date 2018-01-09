@@ -4,7 +4,14 @@ sinlimconbackend
 * 스프링 기본 설정 완료
 * 기본적인 DB 설계 완료 - 추가사항이 생길시 변경 필요
 * DB에서 데이터 뽑아 오는것 완료
-* API 설계 상태 - 예제로 하나정도 완성, 나머지 API 설계 필요
+* API 설계 완료
+
+# 해야할 것들
+* 설계된 API에 해당하는 API 생성
+* JWT를 이용한 로그인 공부 및 구현
+* 리눅스 서버에 실제 API 배포
+  * 젠킨스 사용 예정(젠킨스에 대한 간단한 공부)
+  * 파일 서버 어떻게 할지에 대한 고민(S3를 이용할것인지 개인적인 파일서버 이용할 이용할것인지)
 
 # RESTFUL API 상태
 * ## Resource
@@ -49,10 +56,25 @@ sinlimconbackend
 
 * ##  주소 설계
 
-  * /sinlimcon/designs -> 디자인 전체 리스트 불러오기
-* ## 배포 상태
-    * 미 배포  
-    *  AWS EC2에 젠킨스 사용 하여 배포 예정
+| 주소                                     | method | 기능                                      |
+|------------------------------------------|--------|-------------------------------------------|
+| /designs                                 | GET    | 전체 디자인 조회                          |
+| /designs                                 | POST   | 디자인 추가                               |
+| /designs/{designid}                      | GET    | designid에 해당하는 디자인 상세 내역 조회 |
+| /designs/{designid}                      | PUT    | designid에 해당하는 디자인 수정           |
+| /designs/{designid}                      | DELETE | designid에 해당하는 디자인 삭제           |
+| /designs/{designid}/pictures             | GET    | designid에 해당하는 전체 사진             |
+| /designs/{designid}/pictures             | POST   | desingnid에 해당하는 사진 추가            |
+| /designs/{designid}/pictures/{pictureid} | GET    | designid에 해당하는 pictureid 조회        |
+| /designs/{designid}/pictures/{pictureid} | PUT    | designid에 해당하는 pictureid 수정        |
+| /designs/{designid}/pictures/{pictureid} | DELETE | designid에 해당하는 pictureid 삭제        |
+| /users                                   | GET    | 전체 유저 조회                            |
+| /users                                   | POST   | 유저 추가                                 |
+| /users/{userid}                          | GET    | userid에 해당하는 user조회                |
+| /users/{userid}                          | PUT    | userid에 해당하는 user 수정               |
+| /users/{userid}                          | DELETE | userid에 해당하는 user 삭제               |
+
+
 
 # DB 연결
 * End point=designduck.cphno6qganog.ap-northeast-2.rds.amazonaws.com:3306
