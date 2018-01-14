@@ -22,9 +22,10 @@ sinlimconbackend
       username : VARCHAR
       email : VARCHAR
       password : VARCHAR
-      createtime : TIMESTAMP
-      birthdate : DATE
-  }
+      createtime : DATETIME
+      birthdate : DATE
+      design : List<DESIGN>
+      }
   ~~~
 
   ~~~
@@ -35,7 +36,8 @@ sinlimconbackend
     lastuploadtime : DATETIME
     price : int
     summary : VARCHAR
-  }
+    picture : List<PICTURE>
+    }
   ~~~
 
   ~~~
