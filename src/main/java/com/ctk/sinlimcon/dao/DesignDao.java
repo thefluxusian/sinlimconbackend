@@ -1,4 +1,4 @@
-package com.ctk.sinlimcom.dao;
+package com.ctk.sinlimcon.dao;
 
 import java.util.List;
 
@@ -28,4 +28,7 @@ public class DesignDao {
 	}
 
 
+	public void postDesign(DesignVo design) {
+		session.insert("insertDesing",design);
+	}
 }

@@ -1,4 +1,4 @@
-package com.ctk.sinlimcon;
+package com.ctk.sinlimcon.controller;
 
 
 import org.slf4j.Logger;

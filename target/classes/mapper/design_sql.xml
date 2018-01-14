@@ -17,5 +17,10 @@
 		from design
 		order by lastupdatetime;
 	</select>
+	
+	<insert id="insertDesign" parameterType="Design">
+		insert into users values(#{designid},#{designname},#{firstuploadtime},#{lastupdatetime},#{price},#{summary})
+	</insert>
+	
 
 </mapper>

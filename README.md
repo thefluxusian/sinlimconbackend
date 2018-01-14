@@ -25,12 +25,14 @@ sinlimconbackend
       createtime : DATETIME
       birthdate : DATE
       design : List<DESIGN>
+      buyhistory : List<BUYHISTORY>
       }
   ~~~
 
   ~~~
   DESIGN {
     desigid : VARCHAR
+    designname : VARCHAR
     userid : VARCHAR
     firstuploadtime : DATETIME
     lastuploadtime : DATETIME
@@ -44,6 +46,16 @@ sinlimconbackend
   PICTURE {
     pictureid : int
     filesrc : VARCHAR
+    design_designid : VARCHAR
+  }
+  ~~~
+
+  ~~~
+  BUYHISTORY{
+    buytid : VARCHAR
+    buyday : DATETIME
+    numberofdownload :int
+    user_userid : VARCHAR
     design_designid : VARCHAR
   }
   ~~~

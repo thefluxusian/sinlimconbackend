@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.ctk.sinlimcom.dao.DesignDao;
+import com.ctk.sinlimcon.dao.DesignDao;
 import com.ctk.sinlimcon.vo.DesignVo;
 
 @Service("designService")
@@ -19,5 +19,10 @@ public class DesignService {
 		} else {
 			return designdao.read(userId);
 		}
+	}
+
+	public Object postDesign(DesignVo design) {
+		designdao.postDesign(design);
+		return null;
 	}
 }
