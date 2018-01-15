@@ -1,27 +1,27 @@
 package com.ctk.sinlimcon.vo;
 
 public class PictureVo {
-	private int pictureId;
-	private String fileSrc;
-	private String designId;
+	private int pictureid;
+	private String filesrc;
+	private String designid;
  
 	public int getPictureId() {
-		return pictureId;
+		return pictureid;
 	}
 	public void setPictureId(int pictureId) {
-		this.pictureId = pictureId;
+		this.pictureid = pictureId;
 	}
 	public String getFileSrc() {
-		return fileSrc;
+		return filesrc;
 	}
 	public void setFileSrc(String fileSrc) {
-		this.fileSrc = fileSrc;
+		this.filesrc = fileSrc;
 	}
 	public String getDesignId() {
-		return designId;
+		return designid;
 	}
 	public void setDesignId(String designId) {
-		this.designId = designId;
+		this.designid = designId;
 	}
 	
 	

@@ -25,4 +25,16 @@ public class DesignService {
 		designdao.postDesign(design);
 		return null;
 	}
+
+	public void deleteDesign(String designid) {
+		designdao.deleteDesign(designid);
+	}
+
+	public Object getDesign(String designid) {
+		return designdao.getDesign(designid);
+	}
+
+	public void putDesign(String designid, DesignVo design) {
+		designdao.putDesign(designid,design);
+	}
 }

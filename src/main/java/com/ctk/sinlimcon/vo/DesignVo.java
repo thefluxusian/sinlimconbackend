@@ -28,6 +28,13 @@ public class DesignVo {
 		return userid;
 	}
 
+	@Override
+	public String toString() {
+		return "DesignVo [designid=" + designid + ", designname=" + designname + ", userid=" + userid
+				+ ", firstuploadtime=" + firstuploadtime + ", lastupdatetime=" + lastupdatetime + ", price=" + price
+				+ ", summary=" + summary + "]";
+	}
+
 	public void setUserid(String userid) {
 		this.userid = userid;
 	}

@@ -19,8 +19,31 @@
 	</select>
 	
 	<insert id="insertDesign" parameterType="Design">
-		insert into users values(#{designid},#{designname},#{firstuploadtime},#{lastupdatetime},#{price},#{summary})
+		insert into design values(#{designid},#{designname},#{userid},now(),now(),#{price},#{summary})
 	</insert>
 	
+	<delete id="deleteDesign" parameterType="string">
+		delete from design where
+		designid = #{designid}
+	</delete>
+	
+	<select id="getDesign"  parameterType="string" resultType="Design">
+		select
+		*
+		from design
+		where 
+		designid = #{designid}
+	</select>
+	
+	<update id="updateDesign" parameterType="Design">
+		update design 
+		set
+		designname = #{designname},
+		userid = #{userid},
+		lastupdatetime=now(),
+		price=#{price},
+		summary=#{summary}
+		where designid = #{designid}
+	</update>
 
 </mapper>

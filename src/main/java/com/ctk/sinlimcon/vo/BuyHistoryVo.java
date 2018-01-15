@@ -9,8 +9,8 @@ public class BuyHistoryVo {
 	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy HH:mm:ss",timezone="Asia/Seoul")
 	private Date buyday;
 	private int numberofdownload;
-	private String userId;
-	private String designId;
+	private String userid;
+	private String designid;
 	
 	public String getBuyid() {
 		return buyid;
@@ -31,16 +31,16 @@ public class BuyHistoryVo {
 		this.numberofdownload = numberofdownload;
 	}
 	public String getUserId() {
-		return userId;
+		return userid;
 	}
 	public void setUserId(String userId) {
-		this.userId = userId;
+		this.userid = userId;
 	}
 	public String getDesignId() {
-		return designId;
+		return designid;
 	}
 	public void setDesignId(String designId) {
-		this.designId = designId;
+		this.designid = designId;
 	}
 	
 	

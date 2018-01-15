@@ -6,31 +6,31 @@ import java.util.List;
 import com.fasterxml.jackson.annotation.JsonFormat;
 
 public class UserVo {
-	private String userId;
-	private String profileimageUrl;
+	private String userid;
+	private String profileimageurl;
 	private String email;
 	private String password;
 	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy HH:mm:ss", timezone = "Asia/Seoul")
-	private Date createTime;
+	private Date createtime;
 	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy HH:mm:ss", timezone = "Asia/Seoul")
-	private Date birthDate;
+	private Date birthdate;
 	private List<DesignVo> design;
-	private List<BuyHistoryVo> buyHistory;
+	private List<BuyHistoryVo> buyhistory;
 
 	public String getUserId() {
-		return userId;
+		return userid;
 	}
 
 	public void setUserId(String userId) {
-		this.userId = userId;
+		this.userid = userId;
 	}
 
 	public String getProfileimageUrl() {
-		return profileimageUrl;
+		return profileimageurl;
 	}
 
 	public void setProfileimageUrl(String profileimageUrl) {
-		this.profileimageUrl = profileimageUrl;
+		this.profileimageurl = profileimageUrl;
 	}
 
 	public String getEmail() {
@@ -50,19 +50,19 @@ public class UserVo {
 	}
 
 	public Date getCreateTime() {
-		return createTime;
+		return createtime;
 	}
 
 	public void setCreateTime(Date createTime) {
-		this.createTime = createTime;
+		this.createtime = createTime;
 	}
 
 	public Date getBirthDate() {
-		return birthDate;
+		return birthdate;
 	}
 
 	public void setBirthDate(Date birthDate) {
-		this.birthDate = birthDate;
+		this.birthdate = birthDate;
 	}
 
 	public List<DesignVo> getDesign() {
@@ -74,11 +74,11 @@ public class UserVo {
 	}
 
 	public List<BuyHistoryVo> getBuyHistory() {
-		return buyHistory;
+		return buyhistory;
 	}
 
 	public void setBuyHistory(List<BuyHistoryVo> buyHistory) {
-		this.buyHistory = buyHistory;
+		this.buyhistory = buyHistory;
 	}
 
 }

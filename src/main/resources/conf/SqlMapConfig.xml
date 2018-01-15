@@ -7,6 +7,7 @@
 		<typeAlias alias="BuyHistory" type="com.ctk.sinlimcon.vo.BuyHistoryVo" />
 		<typeAlias alias="Design" type="com.ctk.sinlimcon.vo.DesignVo" />
 		<typeAlias alias="Picture" type="com.ctk.sinlimcon.vo.PictureVo" />
+		<typeAlias alias="User" type="com.ctk.sinlimcon.vo.UserVo" />
 	</typeAliases>
 </configuration>
 
