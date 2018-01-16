@@ -23,9 +23,9 @@ USER {
     username : VARCHAR
     email : VARCHAR
     password : VARCHAR
-     createtime : DATETIME
-     birthdate : DATE
-     design : List<DESIGN>
+    createtime : DATETIME
+    birthdate : DATE
+    design : List<DESIGN>
     buyhistory : List<BUYHISTORY>
     }
 ~~~
@@ -39,7 +39,7 @@ DESIGN {
   lastuploadtime : DATETIME
   price : int
   summary : VARCHAR
-   picture : List<PICTURE>
+  picture : List<PICTURE>
   }
 ~~~
 
