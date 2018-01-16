@@ -15,58 +15,59 @@ sinlimconbackend
 
 # RESTFUL API 상태
 * ## Resource
-  ~~~
-  USER {
-      userid : VARCHAR
-      profileimageurl : VARCHAR
-      username : VARCHAR
-      email : VARCHAR
-      password : VARCHAR
-      createtime : DATETIME
-      birthdate : DATE
-      design : List<DESIGN>
-      buyhistory : List<BUYHISTORY>
-      }
-  ~~~
 
-  ~~~
-  DESIGN {
-    desigid : VARCHAR
-    designname : VARCHAR
+~~~
+USER {
     userid : VARCHAR
-    firstuploadtime : DATETIME
-    lastuploadtime : DATETIME
-    price : int
-    summary : VARCHAR
-    picture : List<PICTURE>
+    profileimageurl : VARCHAR
+    username : VARCHAR
+    email : VARCHAR
+    password : VARCHAR
+     createtime : DATETIME
+     birthdate : DATE
+     design : List<DESIGN>
+    buyhistory : List<BUYHISTORY>
     }
-  ~~~
+~~~
 
-  ~~~
-  PICTURE {
-    pictureid : int
-    filesrc : VARCHAR
-    design_designid : VARCHAR
+~~~
+DESIGN {
+  desigid : VARCHAR
+  designname : VARCHAR
+  userid : VARCHAR
+  firstuploadtime : DATETIME
+  lastuploadtime : DATETIME
+  price : int
+  summary : VARCHAR
+   picture : List<PICTURE>
   }
-  ~~~
+~~~
 
-  ~~~
-  BUYHISTORY{
-    buytid : VARCHAR
-    buyday : DATETIME
-    numberofdownload :int
-    user_userid : VARCHAR
-    design_designid : VARCHAR
-  }
-  ~~~
+~~~
+PICTURE {
+  pictureid : int
+  filesrc : VARCHAR
+  design_designid : VARCHAR
+}
+~~~
 
-  ~~~
-  ZZIM {
-    zzimid : VARCHAR
-    user_userid : VARCHAR
-    design_designid : VARCHAR
-  }
-  ~~~
+~~~
+BUYHISTORY{
+  buytid : VARCHAR
+  buyday : DATETIME
+  numberofdownload :int
+  user_userid : VARCHAR
+  design_designid : VARCHAR
+}
+~~~
+
+~~~
+ZZIM {
+  zzimid : VARCHAR
+  user_userid : VARCHAR
+  design_designid : VARCHAR
+}
+~~~
 
 * ##  주소 설계
 
