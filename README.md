@@ -23,10 +23,6 @@ USER {
     username : VARCHAR
     email : VARCHAR
     password : VARCHAR
-    createtime : DATETIME
-    birthdate : DATE
-    design : List<DESIGN>
-    buyhistory : List<BUYHISTORY>
     }
 ~~~
 
