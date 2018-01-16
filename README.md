@@ -27,9 +27,9 @@ sinlimconbackend
       design : List<DESIGN>
       buyhistory : List<BUYHISTORY>
       }
-  ~~~
-
-  ~~~
+      ~~~
+      
+      ~~~
   DESIGN {
     desigid : VARCHAR
     designname : VARCHAR
