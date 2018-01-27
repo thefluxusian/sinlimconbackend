@@ -43,12 +43,13 @@ public class DesingController {
 	
 	@RequestMapping(value = "/designs", method = RequestMethod.GET)
 	@ResponseBody
-	public HashMap<String, Object> getDesignList(@RequestParam(value = "index", required = false) String index,HttpServletResponse  response) {
+	public Object getDesignList(@RequestParam(value = "index", required = false) String index,HttpServletResponse  response) {
 		HashMap<String, Object> result = new HashMap<>();
  	    response.setHeader("Access-Control-Allow-Origin", "http://localhost:4200");
 		response.setStatus(200);
+		Object designList=null;
 		try {
-			Object designList = designService.getDesignList(index);
+			designList = designService.getDesignList(index);
 			result.put("designs", designList);
 		} catch (Exception e) {
 			e.getMessage();

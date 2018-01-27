@@ -17,8 +17,8 @@
 		order by lastupdatetime;
 	</select>
 	
-	<insert id="insertUser" parameterType="Design">
-		insert into design values(#{designid},#{designname},#{userid},now(),now(),#{price},#{summary})
+	<insert id="insertUser" parameterType="User">
+		insert into design values(#{userid},#{username},#{email},#{password},now(),#{price},#{summary})
 	</insert>
 	
 	<delete id="deleteUser" parameterType="string">
