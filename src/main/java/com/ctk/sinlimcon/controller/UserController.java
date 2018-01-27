@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.ctk.sinlimcon.service.PictureService;
 import com.ctk.sinlimcon.service.UserService;
 import com.ctk.sinlimcon.vo.PictureVo;
+import com.ctk.sinlimcon.vo.UserVo;
 
 public class UserController {
 	@Autowired
@@ -25,14 +26,18 @@ public class UserController {
 
 	@RequestMapping(value = "/users", method = RequestMethod.POST)
 	@ResponseBody
-	public Object postUsers(@PathVariable String designid, @RequestBody PictureVo picture) {
+	public Object postUsers(@RequestBody UserVo user) {
+		userservice.postUser(user);
 		return null;
 	}
 
 	@RequestMapping(value = "/users/{userid}", method = RequestMethod.GET)
 	@ResponseBody
-	public HashMap<String, Object> getUser(@PathVariable String designId) {
-		return null;
+	public HashMap<String, Object> getUser(@PathVariable String userId) {
+		Object temp=userservice.getUser(userId);
+		HashMap<String, Object> res=new HashMap<>();
+		res.put("user", temp);
+		return res;
 	}
 
 	@RequestMapping(value = "/users/{userid}", method = RequestMethod.PUT)

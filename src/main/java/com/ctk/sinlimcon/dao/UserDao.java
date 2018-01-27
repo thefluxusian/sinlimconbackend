@@ -12,7 +12,11 @@ public class UserDao {
 	private SqlSession session;
 
 	public UserVo getUser(String userId) {
-		UserVo user=session.selectOne("getUser",userId);
+		UserVo user = session.selectOne("getUser", userId);
 		return user;
+	}
+
+	public void postUser(UserVo user) {
+		session.insert("insertUser", user);
 	}
 }

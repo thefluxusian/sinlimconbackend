@@ -18,7 +18,7 @@
 	</select>
 	
 	<insert id="insertUser" parameterType="User">
-		insert into design values(#{userid},#{username},#{email},#{password},now(),#{price},#{summary})
+		insert into user values(#{userid},#{username},#{email},#{password},now(),#{bitdh_date},#{profileimageurl})
 	</insert>
 	
 	<delete id="deleteUser" parameterType="string">
