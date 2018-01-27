@@ -3,6 +3,8 @@ package com.ctk.sinlimcon.controller;
 import java.util.HashMap;
 import java.util.List;
 
+import javax.servlet.http.HttpServletResponse;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -24,14 +26,30 @@ public class DesingController {
 	@Autowired
 	private DesignService designService;
 
+	
+	@RequestMapping(value = "/designsNumber", method = RequestMethod.GET)
+	@ResponseBody
+	public int getDesignNumber() {
+		HashMap<String, Object> result = new HashMap<>();
+		int designNumber=-1;
+		try {
+			 designNumber= designService.getDesignNumber();
+			result.put("number", designNumber);
+		} catch (Exception e) {
+			e.getMessage();
+		}
+		return designNumber;
+	}
+	
 	@RequestMapping(value = "/designs", method = RequestMethod.GET)
 	@ResponseBody
-	public HashMap<String, Object> getDesignList(@RequestParam(value = "userId", required = false) String userId) {
+	public HashMap<String, Object> getDesignList(@RequestParam(value = "index", required = false) String index,HttpServletResponse  response) {
 		HashMap<String, Object> result = new HashMap<>();
-
+ 	    response.setHeader("Access-Control-Allow-Origin", "http://localhost:4200");
+		response.setStatus(200);
 		try {
-			Object userList = designService.getDesignList(userId);
-			result.put("designs", userList);
+			Object designList = designService.getDesignList(index);
+			result.put("designs", designList);
 		} catch (Exception e) {
 			e.getMessage();
 		}
@@ -40,16 +58,15 @@ public class DesingController {
 	
 	@RequestMapping(value = "/designs/{designid}", method = RequestMethod.GET)
 	@ResponseBody
-	public HashMap<String, Object> getDesign(@PathVariable String designid) {
+	public Object getDesign(@PathVariable String designid) {
 		HashMap<String, Object> result = new HashMap<>();
-
+		Object List=null;
 		try {
-			Object userList = designService.getDesign(designid);
-			result.put("designs", userList);
+			 List = designService.getDesign(designid);
 		} catch (Exception e) {
 			e.getMessage();
 		}
-		return result;
+		return List;
 	}
 	
 	@RequestMapping(value = "/designs", method = RequestMethod.POST)

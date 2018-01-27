@@ -23,9 +23,9 @@ public class HomeController {
 
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	@ResponseBody
-	public HashMap<String, Object> HomePage() {
-
-		return null;
+	public String HomePage() {
+		String a="A";
+		return a;
 	}
 
 }

@@ -21,13 +21,12 @@ public class DesignDao {
 		System.out.println(designList);
 		return designList;
 	}
-
-
-	public DesignVo read(String userId) {
-		DesignVo design=session.selectOne("selectDesignById");
-		return design;
+	
+	public List<Object> readByIndex(int index) {
+		List<Object> designList = session.selectList("selectDesignByIndex",index);
+		System.out.println(designList);
+		return designList;
 	}
-
 
 	public void postDesign(DesignVo design) {
 		session.insert("insertDesign",design);
@@ -39,7 +38,7 @@ public class DesignDao {
 	}
 
 
-	public Object getDesign(String designid) {
+	public DesignVo getDesign(String designid) {
 		DesignVo design=session.selectOne("getDesign",designid);
 		return design;
 	}
@@ -53,5 +52,10 @@ public class DesignDao {
 		param.put("summary", design.getSummary());
 		param.put("designid", designid);
 		session.update("updateDesign", param);
+	}
+
+	public int getDesignNumber() {
+		int re=session.selectOne("getDesignNumber");
+		return re;
 	}
 }

@@ -14,6 +14,7 @@ public class DesignVo {
 	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy HH:mm:ss",timezone="Asia/Seoul")
 	private Date lastupdatetime;
 	private int price;
+	private String picturesrc;
 	private String summary;
 
 	public String getDesignname() {
@@ -78,5 +79,14 @@ public class DesignVo {
 	public void setSummary(String summary) {
 		this.summary = summary;
 	}
+	
+	public String getPicturesrc() {
+		return picturesrc;
+	}
+
+	public void setPicturesrc(String picturesrc) {
+		this.picturesrc = picturesrc;
+	}
+
 
 }

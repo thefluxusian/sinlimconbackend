@@ -3,12 +3,11 @@
 	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="design">
 
-	<select id="selectDesign2ById" parameterType="string" resultType="com.ctk.sinlimcon.vo.DesignVo">
+	<select id="getPictureByDesignId" parameterType="string" resultType="Picture">
 		select
 		*
-		from design
-		where userid=#{userId}
-		order by lastupdatetime;
+		from picture
+		where design_designid=#{designid}
 	</select>
 
 
