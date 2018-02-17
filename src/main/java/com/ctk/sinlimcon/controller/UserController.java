@@ -3,6 +3,7 @@ package com.ctk.sinlimcon.controller;
 import java.util.HashMap;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,12 +19,14 @@ public class UserController {
 	@Autowired
 	private UserService userservice;
 
+	@CrossOrigin(origins = "*")
 	@RequestMapping(value = "/users", method = RequestMethod.GET)
 	@ResponseBody
 	public HashMap<String, Object> getUsers(@PathVariable String designId) {
 		return null;
 	}
 
+	@CrossOrigin(origins = "*")
 	@RequestMapping(value = "/users", method = RequestMethod.POST)
 	@ResponseBody
 	public Object postUsers(@RequestBody UserVo user) {
@@ -31,6 +34,7 @@ public class UserController {
 		return null;
 	}
 
+	@CrossOrigin(origins = "*")
 	@RequestMapping(value = "/users/{userid}", method = RequestMethod.GET)
 	@ResponseBody
 	public HashMap<String, Object> getUser(@PathVariable String userId) {
@@ -40,12 +44,14 @@ public class UserController {
 		return res;
 	}
 
+	@CrossOrigin(origins = "*")
 	@RequestMapping(value = "/users/{userid}", method = RequestMethod.PUT)
 	@ResponseBody
 	public HashMap<String, Object> putUser(@PathVariable String designId) {
 		return null;
 	}
-
+	
+	@CrossOrigin(origins = "*")
 	@RequestMapping(value = "/users/{userid}", method = RequestMethod.DELETE)
 	@ResponseBody
 	public HashMap<String, Object> deleteUser(@PathVariable String designId) {

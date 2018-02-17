@@ -3,6 +3,7 @@ package com.ctk.sinlimcon.controller;
 import java.util.HashMap;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,6 +16,7 @@ public class PictureController {
 	@Autowired
 	private PictureService pictureservice;
 
+	@CrossOrigin(origins = "*")
 	@RequestMapping(value = "/designs/{designId}/pictures", method = RequestMethod.GET)
 	@ResponseBody
 	public HashMap<String, Object> getDesignList(@PathVariable String designId) {
@@ -24,6 +26,7 @@ public class PictureController {
 		return result;
 	}
 
+	@CrossOrigin(origins = "*")
 	@RequestMapping(value = "/designs/{designid}/pictures", method = RequestMethod.POST)
 	@ResponseBody
 	public Object postPicture(@PathVariable String designid, @RequestBody PictureVo picture) {
@@ -36,18 +39,21 @@ public class PictureController {
 		return null;
 	}
 
+	@CrossOrigin(origins = "*")
 	@RequestMapping(value = "/designs/{designid}/pictures/{pictureid}", method = RequestMethod.GET)
 	@ResponseBody
 	public HashMap<String, Object> getPicture(@PathVariable String designId) {
 		return null;
 	}
 
+	@CrossOrigin(origins = "*")
 	@RequestMapping(value = "/designs/{designid}/pictures/{pictureid}", method = RequestMethod.PUT)
 	@ResponseBody
 	public HashMap<String, Object> putPicture(@PathVariable String designId) {
 		return null;
 	}
 
+	@CrossOrigin(origins = "*")
 	@RequestMapping(value = "/designs/{designid}/pictures/{pictureid}", method = RequestMethod.DELETE)
 	@ResponseBody
 	public HashMap<String, Object> deletePicture(@PathVariable String designId) {

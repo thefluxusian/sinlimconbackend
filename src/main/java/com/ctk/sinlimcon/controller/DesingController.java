@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -27,6 +28,7 @@ public class DesingController {
 	private DesignService designService;
 
 	
+	@CrossOrigin(origins = "*")
 	@RequestMapping(value = "/designsNumber", method = RequestMethod.GET)
 	@ResponseBody
 	public int getDesignNumber() {
@@ -41,6 +43,7 @@ public class DesingController {
 		return designNumber;
 	}
 	
+	@CrossOrigin(origins = "*")
 	@RequestMapping(value = "/designs", method = RequestMethod.GET)
 	@ResponseBody
 	public Object getDesignList(@RequestParam(value = "index", required = false) String index,HttpServletResponse  response) {
@@ -57,6 +60,7 @@ public class DesingController {
 		return result;
 	}
 	
+	@CrossOrigin(origins = "*")
 	@RequestMapping(value = "/designs/{designid}", method = RequestMethod.GET)
 	@ResponseBody
 	public Object getDesign(@PathVariable String designid) {
@@ -70,6 +74,7 @@ public class DesingController {
 		return List;
 	}
 	
+	@CrossOrigin(origins = "*")
 	@RequestMapping(value = "/designs", method = RequestMethod.POST)
 	@ResponseBody
 	public HashMap<String, Object> postDesign(@RequestBody DesignVo design) {
@@ -83,12 +88,14 @@ public class DesingController {
 		return result;
 	}
 	
+	@CrossOrigin(origins = "*")
 	@RequestMapping(value = "/designs/{designid}", method = RequestMethod.DELETE)
 	@ResponseBody
 	public void deleteDesign(@PathVariable String designid) {
 			designService.deleteDesign(designid);
 	}
 	
+	@CrossOrigin(origins = "*")
 	@RequestMapping(value = "/designs/{designid}", method = RequestMethod.PUT)
 	@ResponseBody
 	public Object putDesign(@PathVariable String designid,@RequestBody DesignVo design) {
